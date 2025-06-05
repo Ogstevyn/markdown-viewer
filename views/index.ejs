@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1><%= title %></h1>
+        <div class="status">
+          <span id="connection-status" class="status-connected">Connected</span>
+          <span id="user-count">1 user online</span>
+        </div>
+      </header>
+
+      <div class="editor-container">
+        <div class="editor-panel">
+          <div class="panel-header">
+            <h3>📝 Markdown Editor</h3>
+          </div>
+          <textarea
+            id="markdown-input"
+            placeholder="Start typing your markdown here..."
+            spellcheck="false"
+          >
+<%= initialMarkdown %></textarea
+          >
+        </div>
+
+        <div class="preview-panel">
+          <div class="panel-header">
+            <h3>👁️ Live Preview</h3>
+          </div>
+          <div id="preview-content" class="markdown-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
